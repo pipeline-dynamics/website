@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60">
+  <g fill="#FF694A">
+    <path d="M25 15 L35 25 L25 35 L15 25 Z"/>
+    <path d="M35 25 L45 35 L35 45 L25 35 Z"/>
+  </g>
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#262A38">dbt</text>
+</svg>
