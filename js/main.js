@@ -33,13 +33,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form data
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
 
-            // Show success message (in a real application, you would send this to a server)
-            alert(`Thank you for your message, ${name}! We'll get back to you soon at ${email}.`);
+            // Create success message element
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <strong>Thank you, ${name}!</strong><br>
+                We've received your message and will get back to you soon at ${email}.
+            `;
+            
+            // Insert message before the form
+            contactForm.parentNode.insertBefore(successMessage, contactForm);
             
             // Reset form
             contactForm.reset();
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
         });
     }
 
