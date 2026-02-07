@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Pipeline Dynamics - Learn more about our mission and values">
-    <title>About - Pipeline Dynamics</title>
+    <meta name="description" content="About Pipeline Dynamics - Data engineering consulting by Stephen Herron.">
+    <title>About | Pipeline Dynamics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,6 +15,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
+                    <span class="logo-icon">◆</span>
                     <h1>Pipeline Dynamics</h1>
                 </div>
                 <ul class="nav-menu">
@@ -30,43 +34,127 @@
     </header>
 
     <main>
-        <section class="content-section">
+        <section class="page-hero">
             <div class="container">
-                <h2>About Pipeline Dynamics</h2>
-                <p>Founded with a vision to revolutionize infrastructure management, Pipeline Dynamics has grown to become a trusted partner for organizations seeking reliable, scalable, and innovative solutions.</p>
-                
-                <p>Our team of experienced professionals brings together expertise from various domains, including cloud computing, DevOps, security, and software architecture. We are committed to delivering excellence in every project we undertake.</p>
+                <h2>About</h2>
+                <p>Who's building your pipelines</p>
+            </div>
+        </section>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-dark);">Our Mission</h3>
-                <p>To empower organizations with cutting-edge infrastructure solutions that drive efficiency, innovation, and growth. We believe in building systems that are not only robust and scalable but also maintainable and cost-effective.</p>
+        <section class="about-intro">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Hi, I'm Stephen</h3>
+                        <p class="lead">I'm a data engineer. I build the stuff that moves data around.</p>
+                        <p>I've been doing this for a while now—building pipelines, setting up warehouses, cleaning up the messes that happen when data systems grow faster than anyone planned for.</p>
+                        <p>I started Pipeline Dynamics because I kept seeing the same problems: companies stuck with brittle pipelines, expensive tools they don't know how to use, and data teams buried in maintenance work instead of doing anything useful. I help fix that.</p>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-dark);">Our Values</h3>
-                <ul class="service-list">
-                    <li>
-                        <h3>Excellence</h3>
-                        <p style="color: var(--text-light); margin: 0;">We strive for the highest standards in everything we do</p>
-                    </li>
-                    <li>
-                        <h3>Innovation</h3>
-                        <p style="color: var(--text-light); margin: 0;">We embrace new technologies and approaches to solve complex problems</p>
-                    </li>
-                    <li>
-                        <h3>Integrity</h3>
-                        <p style="color: var(--text-light); margin: 0;">We conduct our business with honesty and transparency</p>
-                    </li>
-                    <li>
-                        <h3>Collaboration</h3>
-                        <p style="color: var(--text-light); margin: 0;">We work closely with our clients to understand and meet their needs</p>
-                    </li>
-                </ul>
+        <section class="expertise-section">
+            <div class="container">
+                <h3>Tools & Tech</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <h4>Cloud Platforms</h4>
+                        <ul>
+                            <li>Snowflake</li>
+                            <li>Databricks</li>
+                            <li>BigQuery</li>
+                            <li>AWS / Azure / GCP</li>
+                        </ul>
+                    </div>
+                    <div class="expertise-card">
+                        <h4>Orchestration</h4>
+                        <ul>
+                            <li>Apache Airflow</li>
+                            <li>Prefect</li>
+                            <li>dbt Cloud</li>
+                        </ul>
+                    </div>
+                    <div class="expertise-card">
+                        <h4>Data Modeling</h4>
+                        <ul>
+                            <li>dbt</li>
+                            <li>Dimensional modeling</li>
+                            <li>Data vault</li>
+                            <li>Lakehouse architecture</li>
+                        </ul>
+                    </div>
+                    <div class="expertise-card">
+                        <h4>Languages & Tools</h4>
+                        <ul>
+                            <li>SQL (all dialects)</li>
+                            <li>Python</li>
+                            <li>Spark</li>
+                            <li>Terraform / OpenTofu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-dark);">Why Choose Us?</h3>
-                <p>With years of experience in the industry, we have successfully delivered solutions for clients across various sectors. Our track record speaks for itself, with a high rate of client satisfaction and long-term partnerships.</p>
+        <section class="philosophy-section">
+            <div class="container">
+                <div class="philosophy-content">
+                    <h3>How We Work</h3>
+                    <div class="philosophy-grid">
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <h4>We don't cut corners</h4>
+                            <p>Fast doesn't mean sloppy. We write code that works, has tests, and makes sense when you read it six months later.</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </div>
+                            <h4>We keep you in the loop</h4>
+                            <p>You'll know what we're working on, what's blocked, and when things will be done. No radio silence.</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                                </svg>
+                            </div>
+                            <h4>We won't leave you stuck</h4>
+                            <p>When we're done, your team will know how everything works. We're not trying to make ourselves irreplaceable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <p>We stay ahead of the curve by continuously learning and adapting to new technologies and best practices. When you work with Pipeline Dynamics, you're not just getting a service provider – you're gaining a partner invested in your success.</p>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Want to work together?</h2>
+                    <p>Tell us what you're trying to do.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <span>Get in Touch</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -75,22 +163,27 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Pipeline Dynamics</h3>
-                    <p>Building the future of infrastructure</p>
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">◆</span>
+                        <h3>Pipeline Dynamics</h3>
+                    </div>
+                    <p>Data engineering for hire.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@pipelinedynamics.com</p>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Get in Touch</h4>
+                        <p class="footer-email">info@pipelinedynamics.com</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

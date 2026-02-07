@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pipeline Dynamics - Innovative solutions for modern infrastructure">
-    <title>Pipeline Dynamics - Home</title>
+    <meta name="description" content="Pipeline Dynamics - Expert data engineering consulting. Transform your data infrastructure with modern pipelines, warehouses, and analytics.">
+    <title>Pipeline Dynamics | Data Engineering Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,6 +15,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
+                    <span class="logo-icon">◆</span>
                     <h1>Pipeline Dynamics</h1>
                 </div>
                 <ul class="nav-menu">
@@ -31,13 +35,57 @@
 
     <main>
         <section class="hero">
+            <div class="hero-bg"></div>
             <div class="container">
                 <div class="hero-content">
-                    <h2>Empowering Infrastructure Excellence</h2>
-                    <p>Building robust, scalable solutions for the modern enterprise</p>
+                    <div class="hero-badge">Data Engineering</div>
+                    <h2>Data pipelines that<br><span class="gradient-text">just work.</span></h2>
+                    <p>We build pipelines, design warehouses, and set up the infrastructure that gets data from A to B without breaking at 3am.</p>
                     <div class="cta-buttons">
-                        <a href="services.html" class="btn btn-primary">Our Services</a>
-                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                        <a href="contact.html" class="btn btn-primary">
+                            <span>Let's Talk</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="services.html" class="btn btn-secondary">View Services</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="data-flow">
+                    <div class="node node-1">Sources</div>
+                    <div class="pipe pipe-1"></div>
+                    <div class="node node-2">Transform</div>
+                    <div class="pipe pipe-2"></div>
+                    <div class="node node-3">Warehouse</div>
+                    <div class="pipe pipe-3"></div>
+                    <div class="node node-4">Analytics</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <div class="container">
+                <p class="tech-label">Tools we work with (among others)</p>
+                <div class="tech-logos">
+                    <div class="tech-item">
+                        <span>❄️</span> Snowflake
+                    </div>
+                    <div class="tech-item">
+                        <span>🧱</span> Databricks
+                    </div>
+                    <div class="tech-item">
+                        <span>📊</span> BigQuery
+                    </div>
+                    <div class="tech-item">
+                        <span>🔧</span> dbt
+                    </div>
+                    <div class="tech-item">
+                        <span>🌀</span> Airflow
+                    </div>
+                    <div class="tech-item">
+                        <span>⚡</span> Prefect
                     </div>
                 </div>
             </div>
@@ -45,38 +93,139 @@
 
         <section class="features">
             <div class="container">
-                <h2>What We Offer</h2>
+                <div class="section-header">
+                    <h2>What We Do</h2>
+                    <p>The boring-but-critical stuff that makes your data useful.</p>
+                </div>
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Performance</h3>
-                        <p>Lightning-fast solutions optimized for peak efficiency</p>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+                            </svg>
+                        </div>
+                        <h3>Pipelines</h3>
+                        <p>Get data from sources to destinations without duct tape. We build pipelines you can monitor, debug, and hand off to your team.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Security</h3>
-                        <p>Enterprise-grade security measures to protect your data</p>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <h3>Warehouses</h3>
+                        <p>Whatever platform you're on, we'll set it up so your queries run fast and your bills stay reasonable.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📈</div>
-                        <h3>Scalability</h3>
-                        <p>Infrastructure that grows with your business needs</p>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                            </svg>
+                        </div>
+                        <h3>Data Modeling</h3>
+                        <p>Turn raw tables into clean datasets your analysts can trust. Tests, docs, the whole thing.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💡</div>
-                        <h3>Innovation</h3>
-                        <p>Cutting-edge technologies and best practices</p>
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+                            </svg>
+                        </div>
+                        <h3>Migrations</h3>
+                        <p>Moving off that old system? We've done this before. We'll get your data across without losing anything.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10"/>
+                                <path d="M13 2.05A10 10 0 0 1 22 12"/>
+                                <path d="M2 12h4M18 12h4M12 2v4M12 18v4"/>
+                                <circle cx="18" cy="18" r="4"/>
+                                <path d="M18 16v4M16 18h4"/>
+                            </svg>
+                        </div>
+                        <h3>Cloud Infrastructure</h3>
+                        <p>We build on AWS, Azure, and GCP using Terraform and OpenTofu. Infrastructure as code, done right.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="about-preview">
+        <section class="approach">
             <div class="container">
-                <div class="about-content">
-                    <h2>About Pipeline Dynamics</h2>
-                    <p>We are a leading provider of infrastructure solutions, dedicated to helping organizations build and maintain robust, scalable systems. With years of experience and a commitment to excellence, we deliver results that exceed expectations.</p>
-                    <a href="about.html" class="btn btn-link">Learn More About Us →</a>
+                <div class="approach-content">
+                    <div class="approach-text">
+                        <h2>Why Pipeline Dynamics?</h2>
+                        <p class="lead">We're a small team, not a big agency. You work directly with senior engineers—not whoever's on the bench this week.</p>
+                        <ul class="approach-list">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Years of hands-on experience</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>We explain things in plain English</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>We build things your team can maintain</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Project work or ongoing—whatever fits</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="approach-visual">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="filename">models/core/orders.sql</span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">with</span> source <span class="keyword">as</span> (
+    <span class="keyword">select</span> * <span class="keyword">from</span> {{ <span class="function">ref</span>(<span class="string">'stg_orders'</span>) }}
+),
+
+enriched <span class="keyword">as</span> (
+    <span class="keyword">select</span>
+        order_id,
+        customer_id,
+        order_date,
+        {{ <span class="function">calculate_order_total</span>(<span class="string">'line_items'</span>) }} <span class="keyword">as</span> total
+    <span class="keyword">from</span> source
+)
+
+<span class="keyword">select</span> * <span class="keyword">from</span> enriched</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Got a project?</h2>
+                    <p>Tell us what you're dealing with. No pitch deck required.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <span>Reach out</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -85,22 +234,27 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Pipeline Dynamics</h3>
-                    <p>Building the future of infrastructure</p>
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">◆</span>
+                        <h3>Pipeline Dynamics</h3>
+                    </div>
+                    <p>Data engineering for hire.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@pipelinedynamics.com</p>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Get in Touch</h4>
+                        <p class="footer-email">info@pipelinedynamics.com</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
