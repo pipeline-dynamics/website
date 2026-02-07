@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Pipeline Dynamics - Get in touch with our team">
-    <title>Contact - Pipeline Dynamics</title>
+    <meta name="description" content="Contact Pipeline Dynamics - Data engineering consulting.">
+    <title>Contact | Pipeline Dynamics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,6 +15,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
+                    <span class="logo-icon">◆</span>
                     <h1>Pipeline Dynamics</h1>
                 </div>
                 <ul class="nav-menu">
@@ -30,48 +34,101 @@
     </header>
 
     <main>
-        <section class="content-section">
+        <section class="page-hero">
             <div class="container">
-                <h2>Get in Touch</h2>
-                <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">We'd love to hear from you! Whether you have a question about our services, need a consultation, or just want to say hello, our team is ready to help.</p>
+                <h2>Contact</h2>
+                <p>Tell us what you're working on</p>
+            </div>
+        </section>
 
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Send us a message</h3>
+                        <p>Got a project? Question? Just want to say hi? We read everything.</p>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Other Ways to Reach Us</h3>
-                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">
-                        <strong>Email:</strong> info@pipelinedynamics.com
-                    </p>
-                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">
-                        <strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM EST
-                    </p>
-                    <p style="color: var(--text-light);">
-                        We typically respond to all inquiries within 24 hours during business days.
-                    </p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:info@pipelinedynamics.com">info@pipelinedynamics.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Response Time</h4>
+                                    <p>Usually within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="what-to-expect">
+                            <h4>What happens after you send this?</h4>
+                            <ol>
+                                <li>We'll read it and reply (usually within a day)</li>
+                                <li>If it sounds like we can help, we'll hop on a call</li>
+                                <li>Then we'll send over a proposal with scope and pricing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="you@company.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company <span class="optional">(optional)</span></label>
+                                <input type="text" id="company" name="company" placeholder="Your company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-type">What do you need help with?</label>
+                                <select id="project-type" name="project-type">
+                                    <option value="">Select an option...</option>
+                                    <option value="pipelines">Pipelines</option>
+                                    <option value="warehouse">Warehouse setup</option>
+                                    <option value="analytics">dbt / data modeling</option>
+                                    <option value="migration">Migration</option>
+                                    <option value="infrastructure">New data platform</option>
+                                    <option value="embedded">Ongoing / embedded work</option>
+                                    <option value="other">Something else</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">What's going on?</label>
+                                <textarea id="message" name="message" required placeholder="What are you trying to do? What's not working?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <span>Send Message</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -80,22 +137,27 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Pipeline Dynamics</h3>
-                    <p>Building the future of infrastructure</p>
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">◆</span>
+                        <h3>Pipeline Dynamics</h3>
+                    </div>
+                    <p>Data engineering for hire.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@pipelinedynamics.com</p>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Get in Touch</h4>
+                        <p class="footer-email">info@pipelinedynamics.com</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
