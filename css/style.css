@@ -64,6 +64,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -74,6 +75,7 @@ body {
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .container {
@@ -312,6 +314,12 @@ header {
     flex-wrap: wrap;
 }
 
+.hero-subtext {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
 /* Hero Visual - Data Flow Animation */
 .hero-visual {
     display: flex;
@@ -393,26 +401,60 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
 }
 
 .tech-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-    transition: color var(--transition-fast);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    opacity: 0.7;
 }
 
 .tech-item:hover {
-    color: var(--text-primary);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
-.tech-item span {
-    font-size: 1.5rem;
+.tech-item img {
+    height: 40px;
+    width: auto;
+}
+
+/* ==================== TRUST SIGNALS ==================== */
+.trust-signals {
+    padding: 3rem 0;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.trust-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trust-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 /* ==================== FEATURES SECTION ==================== */
@@ -578,6 +620,71 @@ header {
 .code-content .function { color: #61afef; }
 .code-content .string { color: #98c379; }
 
+/* ==================== TESTIMONIALS SECTION ==================== */
+.testimonials {
+    padding: 6rem 0;
+    background: var(--background-alt);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.testimonial-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+}
+
+.author-company {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
 /* ==================== CTA SECTION ==================== */
 .cta-section {
     padding: 6rem 0;
@@ -602,6 +709,13 @@ header {
     font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
+}
+
+.cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.875rem !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 0 !important;
 }
 
 /* ==================== PAGE HERO (Subpages) ==================== */
@@ -1192,6 +1306,14 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -1236,6 +1358,19 @@ footer {
     .philosophy-grid,
     .engagement-grid {
         grid-template-columns: 1fr;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .trust-number {
+        font-size: 2rem;
+    }
+
+    .approach-visual {
+        display: none;
     }
 
     .expertise-grid {
