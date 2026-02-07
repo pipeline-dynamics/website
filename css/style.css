@@ -82,6 +82,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    overflow-x: hidden;
 }
 
 /* ==================== HEADER & NAVIGATION ==================== */
@@ -403,6 +404,8 @@ header {
     align-items: center;
     gap: 2.5rem;
     flex-wrap: wrap;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .tech-item {
