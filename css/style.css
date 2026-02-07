@@ -411,15 +411,8 @@ header {
     color: var(--text-primary);
 }
 
-.tech-item img {
-    width: 24px;
-    height: 24px;
-    opacity: 0.8;
-    transition: opacity var(--transition-fast);
-}
-
-.tech-item:hover img {
-    opacity: 1;
+.tech-item span {
+    font-size: 1.5rem;
 }
 
 /* ==================== FEATURES SECTION ==================== */
@@ -496,7 +489,6 @@ header {
     padding: 6rem 0;
     background: var(--gray-950);
     color: white;
-    overflow-x: hidden;
 }
 
 .approach-content {
@@ -545,7 +537,6 @@ header {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--gray-800);
-    max-width: 100%;
 }
 
 .code-header {
@@ -581,13 +572,6 @@ header {
     line-height: 1.7;
     overflow-x: auto;
     color: var(--gray-300);
-    max-width: 100%;
-}
-
-.code-content code {
-    display: block;
-    white-space: pre;
-    min-width: 0;
 }
 
 .code-content .keyword { color: #c678dd; }
@@ -1202,16 +1186,6 @@ footer {
 
     .approach-visual {
         order: -1;
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    .code-window {
-        font-size: 0.75rem;
-    }
-
-    .code-content {
-        padding: 1rem;
     }
 
     .expertise-grid {
