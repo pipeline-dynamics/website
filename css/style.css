@@ -582,6 +582,7 @@ header {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--gray-800);
+    max-width: 100%;
 }
 
 .code-header {
@@ -1302,7 +1303,7 @@ footer {
     }
 
     .approach-visual {
-        order: -1;
+        display: none;
     }
 
     .expertise-grid {
@@ -1373,7 +1374,11 @@ footer {
     }
 
     .approach-visual {
-        display: none;
+        display: none !important;
+    }
+
+    .code-window {
+        display: none !important;
     }
 
     .expertise-grid {
