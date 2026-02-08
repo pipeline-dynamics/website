@@ -82,7 +82,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    overflow-x: hidden;
 }
 
 /* ==================== HEADER & NAVIGATION ==================== */
@@ -1357,6 +1356,16 @@ footer {
     .feature-grid,
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        transition: none;
+        transform: none !important;
+    }
+
+    .feature-card:hover {
+        transform: none;
+        box-shadow: none;
     }
 
     .philosophy-grid,
