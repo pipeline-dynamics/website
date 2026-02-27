@@ -78,39 +78,116 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==================== CONTACT FORM ====================
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+            const formWrapper = contactForm.closest('.contact-form-wrapper') || contactForm.parentNode;
+
+            // Remove any existing messages
+            const existingMessage = formWrapper.querySelector('.form-message');
+            if (existingMessage) existingMessage.remove();
 
             // Get form data
             const formData = new FormData(contactForm);
             const name = formData.get('name');
             const email = formData.get('email');
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company') || undefined,
+                'project-type': formData.get('project-type') || undefined,
+                message: formData.get('message')
+            };
 
-            // Create success message element
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.innerHTML = `
-                <strong>Got it, ${name}.</strong><br>
-                I'll get back to you at ${email} soon.
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span>Sending...</span>
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20"/>
+                </svg>
             `;
 
-            // Insert message at top of form wrapper
-            const formWrapper = contactForm.closest('.contact-form-wrapper') || contactForm.parentNode;
-            formWrapper.insertBefore(successMessage, formWrapper.firstChild);
+            // Add spinner animation if not present
+            if (!document.getElementById('spinner-styles')) {
+                const style = document.createElement('style');
+                style.id = 'spinner-styles';
+                style.textContent = `
+                    .spinner { animation: spin 1s linear infinite; }
+                    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                    .form-message { padding: 16px 20px; border-radius: 8px; margin-bottom: 20px; transition: opacity 0.3s, transform 0.3s; }
+                    .form-message.success { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+                    .form-message.error { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+                `;
+                document.head.appendChild(style);
+            }
 
-            // Reset form
-            contactForm.reset();
+            try {
+                // Edge Function URL - set via data attribute or use default
+                const endpoint = contactForm.dataset.endpoint ||
+                    'https://pwluylonglimsdxwcjshc.supabase.co/functions/v1/send-contact-email';
 
-            // Scroll to message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
 
-            // Remove success message after 6 seconds
-            setTimeout(() => {
-                successMessage.style.opacity = '0';
-                successMessage.style.transform = 'translateY(-10px)';
-                setTimeout(() => successMessage.remove(), 300);
-            }, 6000);
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'form-message success';
+                    successMessage.innerHTML = `
+                        <strong>Got it, ${escapeHtml(name)}.</strong><br>
+                        I'll get back to you at ${escapeHtml(email)} soon.
+                    `;
+                    formWrapper.insertBefore(successMessage, formWrapper.firstChild);
+                    contactForm.reset();
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Remove message after 8 seconds
+                    setTimeout(() => {
+                        successMessage.style.opacity = '0';
+                        successMessage.style.transform = 'translateY(-10px)';
+                        setTimeout(() => successMessage.remove(), 300);
+                    }, 8000);
+                } else {
+                    throw new Error(result.error || 'Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                // Show error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'form-message error';
+                errorMessage.innerHTML = `
+                    <strong>Couldn't send your message.</strong><br>
+                    ${escapeHtml(err.message)}<br>
+                    <small>You can also email us directly at info@pipelinedynamics.com</small>
+                `;
+                formWrapper.insertBefore(errorMessage, formWrapper.firstChild);
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Remove message after 10 seconds
+                setTimeout(() => {
+                    errorMessage.style.opacity = '0';
+                    errorMessage.style.transform = 'translateY(-10px)';
+                    setTimeout(() => errorMessage.remove(), 300);
+                }, 10000);
+            } finally {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
         });
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 
     // ==================== SMOOTH SCROLLING ====================
