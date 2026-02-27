@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const TO_EMAIL = "info@pipelinedynamics.com";
+const TO_EMAIL = "YOUR_EMAIL@example.com";
 const FROM_EMAIL = "contact@pipelinedynamics.com";
 
 const corsHeaders = {
