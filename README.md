@@ -85,6 +85,7 @@ In Supabase Dashboard → Edge Functions → Settings → Environment Variables:
 
 ```
 RESEND_API_KEY=re_your_api_key_here
+CONTACT_TO_EMAIL=your-email@example.com
 ```
 
 ### Step 4: Deploy the Edge Function

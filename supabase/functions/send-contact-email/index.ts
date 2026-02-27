@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const TO_EMAIL = "YOUR_EMAIL@example.com";
+const TO_EMAIL = Deno.env.get("CONTACT_TO_EMAIL") || "contact@example.com";
 const FROM_EMAIL = "contact@pipelinedynamics.com";
 
 const corsHeaders = {
@@ -175,6 +175,14 @@ serve(async (req: Request) => {
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
   if (!resendApiKey) {
     console.error("RESEND_API_KEY environment variable is not set");
+    return new Response(JSON.stringify({ error: "Server configuration error" }), {
+      status: 500,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  if (!TO_EMAIL) {
+    console.error("CONTACT_TO_EMAIL environment variable is not set");
     return new Response(JSON.stringify({ error: "Server configuration error" }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
